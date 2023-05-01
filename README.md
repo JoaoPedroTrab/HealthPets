@@ -1,4 +1,4 @@
-###Health Pets
+Health Pets
 
 - Projeto desenvolvido para a disciplina de Engenharia de Software.
 
