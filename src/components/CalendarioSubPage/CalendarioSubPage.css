@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poly&display=swap');
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    color: var(--textSecondary);
+}
+
+.menu-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.itemBoxContainer {
+    display: flex;
+    width: 14rem;
+    padding: 1rem;
+    color: var(--textSecondary);
+    background-color: var(--accentSecondary);
+    border: var(--border_size) solid var(--primary);
+    border-radius: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.itemBoxContainer span {
+    padding-top: 1rem;
+    border-radius: 1rem;
+    background-color: var(--accentPrimary);
+}
+
+.itemBoxContainer img {
+    width: 8rem;
+    height: 8rem;
+    border: var(--border_size) solid none;
+    border-radius: 50%;
+}
+
+.itemBoxContainer p {
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.itemBoxButton {
+    width: 100%;
+    height: 3.5rem;
+    font-size: large;
+    padding: 1rem;
+    border: var(--border_size) solid none;
+    border-radius: 1rem;
+    color: var(--textPrimary);
+    background-color: var(--primary);
+    transition: all 0.3s;
+}
+.menuContainer h1 { 
+    color: rgb(30, 169, 155);
+    font-family: 'Poly', serif;
+    font-size: 1.65rem;
+}
+
+.itemBoxButton:hover {
+    color: var(--textPrimary);
+    background-color: green;
+    border: var(--border_size) solid green;
+    cursor: pointer;
+}
+.botaoOp {
+    width: fit-content;
+    font-size: larger;
+    background-color: rgb(30, 169, 155);
+    color: var(--textPrimary);
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.3s;
+}
+.b1{
+    position: absolute;
+    bottom: 67%;
+    right: 67%;
+}
+.b2 {
+    position: absolute;
+    bottom: 67%;
+    right: 17%;
+}
+
+.botaoOp:hover {
+    background-color: rgb(1, 155, 122);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+.react-calendar { 
+    width: 1500px;
+    height: 330px; 
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    color: #222;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    position: absolute;
+    bottom: 15rem;
+   }
+
+   .react-calendar__navigation button {
+    color: #6f48eb;
+    min-width: 44px;
+    background: none;
+    font-size: 16px;
+    margin-top: 8px;
+   }
+   .react-calendar__navigation button:enabled:hover,
+    .react-calendar__navigation button:enabled:focus {
+    background-color: #f8f8fa;
+    }
+    .react-calendar__navigation button[disabled] {
+        background-color: #f0f0f0;
+       }
+       abbr[title] {
+        text-decoration: none;
+       }
+       .react-calendar__tile:enabled:hover,
+       .react-calendar__tile:enabled:focus {
+        background: #f8f8fa;
+        color: #6f48eb;
+        border-radius: 6px;
+       }
+       .react-calendar__tile--now {
+        background: #6f48eb33;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #6f48eb;
+       }
+       .react-calendar__tile--now:enabled:hover,
+       .react-calendar__tile--now:enabled:focus {
+        background: #6f48eb33;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #6f48eb;
+       }
+       .react-calendar__tile--hasActive:enabled:hover,
+       .react-calendar__tile--hasActive:enabled:focus {
+        background: #f8f8fa;
+       }
+       .react-calendar__tile--active {
+        background: #6f48eb;
+        border-radius: 6px;
+        font-weight: bold;
+        color: white;
+       }
+       .react-calendar__tile--active:enabled:hover,
+       .react-calendar__tile--active:enabled:focus {
+        background: #6f48eb;
+        color: white;
+       }
+       .react-calendar--selectRange .react-calendar__tile--hover {
+        background-color: #f8f8fa;
+       }
+       .react-calendar__tile--range {
+        background: #f8f8fa;
+        color: #6f48eb;
+        border-radius: 0;
+       }
+       .react-calendar__tile--rangeStart {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        background: #6f48eb;
+        color: white;
+       }
+       .react-calendar__tile--rangeEnd {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        background: #6f48eb;
+        color: white;
+       }

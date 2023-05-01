@@ -1,0 +1,68 @@
+.adminForm {
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.adminForm label{
+    border: var(--border_size) solid var(--primary);
+    color: var(--textSecondary);
+    background-color: var(--accentSecondary);
+    padding: 1rem;
+}
+
+.adminForm input{
+    background-color: var(--secondary);
+    border: var(--border_size) solid var(--secondary);
+    margin-left: 0.5rem;
+}
+
+.adminForm button{
+    width: 100%;
+    font-size: larger;
+    border: var(--border_size) solid var(--primary);
+    color: var(--textPrimary);
+    background-color: var(--primary);
+    padding: 1rem;
+    transition: all 0.2s;
+}
+
+.adminForm button:hover{
+    border: var(--border_size) solid green;
+    background-color: green;
+    cursor: pointer;
+}
+
+.adminTable{
+    padding-right: 2rem;
+}
+
+.adminTable tr{
+    align-content: center;
+    text-align: center;
+}
+
+.adminTable td{
+    padding: 1rem;
+    background-color: var(--accentSecondary);
+}
+
+.AdminButtonRemove {
+    font-size: large;
+    padding: 1rem;
+    align-items: center;
+    color: var(--textPrimary);
+    background-color: var(--primary);
+    border: var(--border_size) solid var(--primary);
+    transition: all 0.2s;
+}
+
+.AdminButtonRemove:hover{
+    background-color: red;
+    border: var(--border_size) solid red;
+    cursor: pointer;
+}
+
