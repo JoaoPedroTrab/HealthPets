@@ -3,7 +3,7 @@ import Login from '../components/Login/Login';
 
 function routeLogin() {
   return (
-    <div>
+    <div className='flex-column'>
         <TitleBar />
 
         <Login />

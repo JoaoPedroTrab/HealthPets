@@ -54,11 +54,13 @@
     cursor: pointer;
 }
 
-.cadastroForms a {
-    text-decoration: none;
-    color: rgb(5, 102, 91);
-    font-size: large;
-}
-.cadastroForms {
-    padding-top: 20px;
+.cadastroForm {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: white;
+    background-color: var(--primary);
+    border: var(--border_size) solid var(--primary);
+    border-radius: 1rem;
+    margin-bottom: 15px;
+    font-size: x-large;
 }

@@ -6,6 +6,7 @@
     background-color: var(--primary);
     color: var(--textPrimary);
 }
+
 .titleBar h1{
     text-align: center;
     font-family: 'Pacifico', cursive;

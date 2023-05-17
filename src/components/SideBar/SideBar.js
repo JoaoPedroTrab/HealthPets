@@ -43,6 +43,7 @@ function SideBar(props) {
             <button className={`sideBarButton ${props.option2}`} onClick={perfil}> <HiUser /> Perfil </button>
             <button className={`sideBarButton ${props.option3}`} onClick={cadastro}> <FaPaw /> Cadastro </button>
             <button className="returnButton" onClick={logout}> <FaArrowLeft /> Sair </button>
+            {localStorage.getItem("username").endsWith("admin") ? <button className={`sideBarButton ${props.option4}`} onClick={admin}> <FaCog /> Admin </button> : <></>}
         </div>
     )
 }
