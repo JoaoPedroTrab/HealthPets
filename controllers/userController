@@ -12,22 +12,25 @@ const Usuario = require('../models/users');
 router.post('/login', async (req, res) => {
     const { username, senha } = req.body;
 
-    const usuario = await Usuario.find({ username: username });
+    const usuario = await Usuario.findOne({ username: username });
 
 
     if (!usuario)
         res.status(402).send('Usuário não encontrado');
 
-    if (await bcrypt.compare(senha, usuario[0].senha)) {
-        const token = jwt.sign({ id: usuario[0].id, nome: usuario[0].nome }, process.env.JWT_PASSWORD, { expiresIn: '2d' });
-        res.status(200).json({
-            nome: usuario[0].nome,
-            token: token
-        });
+    if (usuario != null ) {
+        if (await bcrypt.compare(senha, usuario.senha)) {
+            const token = jwt.sign({ id: usuario.id, nome: usuario.nome }, process.env.JWT_PASSWORD, { expiresIn: '2d' });
+            res.status(200).json({
+                nome: usuario.nome,
+                token: token
+            });
+        }
+        else {
+            res.status(401).send('Senha incorreta!');
+        }
     }
-    else {
-        res.status(401).send('Senha incorreta!');
-    }
+
 });
 
 router.post('/cadastro', async (req, res) => {
