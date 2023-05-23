@@ -10,16 +10,16 @@ const router = express.Router();
 const Usuario = require('../models/users');
 
 router.post('/login', async (req, res) => {
-    const { email, senha } = req.body;
+    const { username, senha } = req.body;
 
-    const usuario = await Usuario.find({ email: email });
+    const usuario = await Usuario.find({ username: username });
 
 
     if (!usuario)
         res.status(402).send('Usuário não encontrado');
 
     if (await bcrypt.compare(senha, usuario[0].senha)) {
-        const token = jwt.sign({ id: usuario[0].id, nome: usuario[0].nome, email: usuario[0].email }, process.env.JWT_PASSWORD, { expiresIn: '2d' });
+        const token = jwt.sign({ id: usuario[0].id, nome: usuario[0].nome }, process.env.JWT_PASSWORD, { expiresIn: '2d' });
         res.status(200).json({
             nome: usuario[0].nome,
             token: token
@@ -30,13 +30,13 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
-    const { nome, email, senha, ativo } = req.body;
+router.post('/cadastro', async (req, res) => {
+    const { nome, username, senha, ativo } = req.body;
 
     const senhaCrypt = await bcrypt.hash(senha, 10);
 
     const usuario = {
-        nome, email, senha: senhaCrypt, ativo
+        nome, username, senha: senhaCrypt, ativo
     }
     try {
         await Usuario.create(usuario);
