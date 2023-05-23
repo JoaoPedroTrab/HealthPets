@@ -3,7 +3,7 @@ import './titleBar.css'
 function TitleBar() {
     return (
         <div className="titleBar">
-            <h1><a href="/home">Health Pets</a></h1>
+            <h1>Health Pets</h1>
         </div>
     )
 }

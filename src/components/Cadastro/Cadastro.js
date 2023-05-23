@@ -5,26 +5,28 @@ import './Cadastro.css'
 import Axios from '../../api/axios'
 
 function Cadastro() {
-    const [name, setName] = useState("");
+    const [nome, setNome] = useState("");
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [senha, setSenha] = useState("");
     const navigate = useNavigate();
     async function handleSubmit (e) {
         e.preventDefault();
-
-        try {
-          const res = await Axios.post('/cadastro', {
-            name,
+        const ativo = 1
+        const valores = {
+            nome,
             username,
-            password,
-          });
+            senha,
+            ativo
+        }
+        try {
+          const res = await Axios.post('/usuarios/cadastro', valores);
           if (!res.data.erro) {
-            const token = res.data.token;
             alert("Usuario cadastrado")
             navigate('/');
           } 
         } catch (error) {
-          alert("erro")
+            console.error(error);
+            alert("Insira todos os campos para realizar o cadastro!")
         }
     }
     return (
@@ -34,15 +36,15 @@ function Cadastro() {
                 <form className='loginForm' onSubmit={handleSubmit}>
                     <label>
                         <b>Nome:</b>
-                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
                     </label>
                     <label>
                         <b>Insira um usuário:</b>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
                     </label>
                     <label>
                         <b>Insira uma senha:</b>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} required />
                     </label>
                     <button type="submit" > <b>Entrar</b> </button>
                 </form>

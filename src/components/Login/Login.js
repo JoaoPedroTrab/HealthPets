@@ -14,21 +14,23 @@ function Login() {
             senha,
             username,
         }
-        const res = await Axios.post('/usuarios/login', valores)
         try {
+            const res = await Axios.post('/usuarios/login', valores);
             if (!res.data.error) {
-                console.log("Usuário não encontrado ou senha incorreta.")
+              localStorage.setItem("username", username);
+              localStorage.setItem("cart", JSON.stringify([]));
+              alert(`Logado com o usuário: ${localStorage.getItem("username")}`);
+              navigate('/home');
+            } 
+          } catch (error) {
+            if (error.response && error.response.status === 402)  {
+                alert("Usuário inválido");
             }
-            else{
-
-                localStorage.setItem("username", username);
-                localStorage.setItem("cart", JSON.stringify([]));
-                alert(`Logado com o usuário: ${localStorage.getItem("username")}`);
-                navigate('/home');
+            if (error.response && error.response.status === 401)  {
+                alert("Senha inválida");
             }
-        } catch (error) {
-            res.status(500).json({ error: error });
-        }
+          }
+          
     }
     return (
         <div className='login'>
