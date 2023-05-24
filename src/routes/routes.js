@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import RouteCalendario from './pages/rotaCalendario';
-import RouteSubPageCalendario from './pages/rotaSubCalendario';
-import RouteCadastroPet from './pages/rotaCadastroPet';
-import RoutePerfil from './pages/routePerfil';
-import RouteLogin from './pages/rotaLogin';
-import RouteAdmin from './pages/rotaAdmin';
-import RouteCadastro from './pages/rotaCadastro'
-import { dataRota }from'./components/Calendario/Calendario'
+import RouteCalendario from '../presentation/pages/rotaCalendario';
+import RouteSubPageCalendario from '../presentation/pages/rotaSubCalendario';
+import RouteCadastroPet from '../presentation/pages/rotaCadastroPet';
+import RoutePerfil from '../presentation/pages/routePerfil';
+import RouteLogin from '../presentation/pages/rotaLogin';
+import RouteAdmin from '../presentation/pages/rotaAdmin';
+import RouteCadastro from '../presentation/pages/rotaCadastro';
+import { dataRota } from '../presentation/components/Calendario/Calendario';
 
 function RoutesApp(){
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './Cadastro.css'
-import Axios from '../../api/axios'
+import Axios from '../../../infra/api/axios'
 
 function Cadastro() {
     const [nome, setNome] = useState("");

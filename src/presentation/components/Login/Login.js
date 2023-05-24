@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './login.css'
-import Axios from "../../api/axios"
+import Axios from '../../../infra/api/axios'
 
 function Login() {
     const [username, setUsername] = useState("");
