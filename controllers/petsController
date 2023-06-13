@@ -1,5 +1,4 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const router = express.Router();
@@ -7,7 +6,7 @@ const router = express.Router();
 const Pets = require('../models/pets');
 
 
-router.post('/pets', async (req, res) => {
+router.post('/adicionar', async (req, res) => {
     const { nomePet, racaPet, nascimentoPet, pesoPet } = req.body;
 
     const infoPet = {
@@ -21,7 +20,7 @@ router.post('/pets', async (req, res) => {
     }
 });
 
-router.get('/pets', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const pets = await Pets.find();
         res.status(200).json(pets);
@@ -30,7 +29,7 @@ router.get('/pets', async (req, res) => {
     }
 });
 
-router.get('/pets/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const pets = await Pets.findOne({ _id: req.params.id });
         if (!pets) {
@@ -43,7 +42,7 @@ router.get('/pets/:id', async (req, res) => {
     }
 });
 
-router.patch('/pets/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const { nomePet, racaPet, nascimentoPet, pesoPet } = req.body;
