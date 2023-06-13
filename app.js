@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userController = require('./controllers/userController');
-//const postsController = require('./controllers/postsController');
+const petController = require('./controllers/petsController');
 //const comentariosController = require('./controllers/comentariosController');
 require('dotenv').config();
 const app = express();
@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/usuarios', userController);
+app.use('/pet/', petController);
 //app.use('/posts', postsController);
 //app.use('/comentarios', comentariosController);
 
